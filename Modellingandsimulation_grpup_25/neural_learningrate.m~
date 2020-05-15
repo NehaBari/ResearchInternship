@@ -1,0 +1,43 @@
+student_scalar = [];
+teacher_scalar = [];
+gen_error = [];
+R_in = [];
+Q_ik = [];
+si = 0;
+tou = 0;
+P= 1000; % number of examples in the dataset
+K=2;% No. of hidden units in the hidden layer
+N=10; %Number of features in the dataset or no. of nodes/neurons in the input layer 
+rngSeed = 999;
+Learningrates_array = [0.5,1,1.5,10];
+lenLRArray=numel(Learningrates_array);
+teacher_weights = randn(K,N)./sqrt(N); % teacher weight vector
+teacher_weights_ortho = GramSchmidt(teacher_weights); %conversion to Isotropic teachers
+teacher_weights = teacher_weights_ortho;
+student_weights = randn(K,N)./sqrt(N);
+dataset = randn(N,P); 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+activation_teacher = 0;
+activation_student = 0; %NOT SURE IF THIS 0 INITIALIZATION IS CORRECT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    for i = 1:P
+        rng(rngSeed);
+        X = dataset(:,i);  % taking one example at a time?
+        % FORWARD PROPAGATE
+        [si,tou,student_scalar] = ForwardPropate(X,K,si,tou,teacher_weights,student_weights,activation_teacher,activation_student,teacher_scalar,student_scalar);
+        % CATCHING GE AND PLOTTING FOR EVERY EXAMPLE
+        [R_in,Q_ik,gen_error] = orderparameter(R_in,Q_ik,student_weights,teacher_weights,K,P,i,gen_error);
+        %%%student_s = student_scalar;
+        % Calculating the gradient
+      %%%  gradient_epsilon_studentweights = (si - tou) * sqrt(2/pi)*exp(-(student_s*student_s)/2)* dataset(:,i);
+        % updating the studen weight vector using gradient
+      %%%  student_weights(j,:) =  student_weights(j,:) - ((Learningrates_array(learning)/P)* gradient_epsilon_studentweights');
+
+
+    end
+
+    si = 0;
+    tou = 0;
+
+%end

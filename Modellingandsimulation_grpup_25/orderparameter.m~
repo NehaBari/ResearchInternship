@@ -1,0 +1,25 @@
+function [R_in,Q_ik,gen_error1] = orderparameter(student_weights,teacher_weights,K,i,N)
+
+    R_in = [];
+    Q_ik = [];
+    gen_error = [];
+     for j = 1:K
+         for m = 1:K
+       % if mod(i,P) == 0
+             = dot(student_weights(j,:), teacher_weights(m,:))/N;
+            % weight vetor
+            %Q_ik(j,K) = dot(student_weights(1,:), student_weights(j,:))/N;
+            %Q_ik(i) = dot(student_weights(1,:), student_weights(j,:))/N;
+            %gen_error(i) = generalizationerror(student_weights,teacher_weights,K);
+            %%%  gradient_epsilon_studentweights = (si - tou) * sqrt(2/pi)*exp(-(student_s*student_s)/2)* dataset(:,i);
+            % updating the studen weight vector using gradient
+            %%%  student_weights(j,:) =  student_weights(j,:) - ((Learningrates_array(learning)/P)* gradient_epsilon_studntweights');
+         end
+      end
+    
+% R_in = R_in;
+% Q_ik = Q_ik;
+gen_error1 = gen_error;
+%R_in(isnan(R_in)) = 1;
+end
+
