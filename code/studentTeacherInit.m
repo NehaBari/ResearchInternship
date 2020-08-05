@@ -1,4 +1,4 @@
-function [student_weights, teacher_weights] = studentTeacherInit(K,N,strInitType)
+function [student_weights, teacher_weights] = studentTeacherInit(R,K,N,strInitType)
 
 if (strcmp(strInitType,'without overlap'))
     
@@ -17,8 +17,8 @@ elseif (strcmp(strInitType,'with overlap'))
     M = K;
     T = eye(M);        %teacher-teacher overlaps
     Q = 0.2 * eye(K);    %Student-student "
-    R = [10^-3, 0; 0, 10^-3]; %Student-teacher "
-   % R = [10^-3, 0, 0 ; 0, 10^-3, 0; 0, 0, 10^-3];
+    %R = [10^-3, 0; 0, 10^-3]; %Student-teacher "
+    
     
     %R = [10^-3, 0,0,0,0,0,0,0,0,0; 0, 10^-3,0,0,0,0,0,0,0,0; 0, 0,10^-3,0,0,0,0,0,0,0; 0,0,0,0,10^-3,0,0,0,0,0; ]; %Student-teacher "
     

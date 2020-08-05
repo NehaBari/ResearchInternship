@@ -1,4 +1,4 @@
-function [generalization_error] = generalizationRelu(student_weights,teacher_weights,k)
+function [generalization_error] = generalizationRelu(student_weights,teacher_weights,k,N)
 student_weights = student_weights;
 teacher_weights = teacher_weights;
 k=k;
@@ -31,11 +31,11 @@ for i = 1:k
     end
 end
 
-term1 =  sum1/(2*k);
-term2 =  sum2/k;
-term3 = sum3/(2*k);
+term1 =  (sum1/(2*k));
+term2 =  (sum2/k);
+term3 = (sum3/(2*k));
 
-generalization_error = term1  - term2 + term3;
+generalization_error = (term1  - term2 + term3);
 end
 
 % in future if the no of hidden units for teacher and student changes then
