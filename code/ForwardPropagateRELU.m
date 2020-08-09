@@ -4,23 +4,16 @@ gxstudent = 0;
 x = 0;
 si = 0;
 for j=1:K
-   % size(teacher_weights)
-   % size(X)
-   % something is wrong with student scalar
-    student_scalar(j) = (dot(student_weights(j,:), X))/sqrt(N);
+    % Local potential scaled
+    student_scalar(j) = sqrt(N)*(dot(student_weights(j,:), X));
     x = student_scalar(j);
     
-    if x > 0
-       gxstudent = x;
-       
-    else
-       gxstudent = 0;
-    end 
-    si = si + gxstudent; % tou is the final teacher output.
+    gxstudent = relu(x);
+    si = si + gxstudent; 
 
 end
-% need to store a vecir since teacher is a vector.
-si1 = (si)/sqrt(K); % since the teachers are already orthonormal this should not matter.
+
+si1 = (si)/sqrt(K);
 student_scalar1 = student_scalar;
 
 end
