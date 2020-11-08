@@ -1,0 +1,62 @@
+
+Gen_error_cov.mat
+genErrsmallconvergedmatrix.mat
+genErrsmallpleatuematrix.mat
+
+R_convergedmatrix.mat
+R_pleatuematrix.mat
+
+RPlotconverged.mat
+RPlotpleatue.mat
+
+
+
+save('RPlotconverged.mat','R_11_plot_con','R_12_plot_con','R_21_plot_con','R_22_plot_con');
+
+save('RPlotpleatue.mat','R_11_plot_pleatue','R_12_plot_pleatue','R_21_plot_pleatue','R_22_plot_pleatue');
+
+
+save('RPlotpleatue.mat','R_11_plot_con','R_12_plot_con','R_13_plot_con','R_14_plot_con','R_21_plot_con','R_22_plot_con','R_23_plot_con','R_24_plot_con','R_31_plot_con','R_32_plot_con','R_33_plot_con','R_34_plot_con','R_41_plot_con','R_42_plot_con','R_43_plot_con','R_44_plot_con');
+
+
+
+R_11_plot_con = zeros(10,12);
+R_12_plot_con = zeros(10,12);
+R_13_plot_con = zeros(10,12);
+R_14_plot_con = zeros(10,12);
+R_21_plot_con = zeros(10,12);
+R_22_plot_con = zeros(10,12);
+R_23_plot_con = zeros(10,12);
+R_24_plot_con = zeros(10,12);
+R_31_plot_con = zeros(10,12);
+R_32_plot_con = zeros(10,12);
+R_33_plot_con = zeros(10,12);
+R_34_plot_con = zeros(10,12);
+R_41_plot_con = zeros(10,12);
+R_42_plot_con = zeros(10,12);
+R_43_plot_con = zeros(10,12);
+R_44_plot_con = zeros(10,12);
+
+
+
+R_11_plot_pleatue = zeros(10,12);
+R_12_plot_pleatue = zeros(10,12);
+R_13_plot_pleatue = zeros(10,12);
+R_14_plot_pleatue = zeros(10,12);
+R_21_plot_pleatue = zeros(10,12);
+R_22_plot_pleatue = zeros(10,12);
+R_23_plot_pleatue = zeros(10,12);
+R_24_plot_pleatue = zeros(10,12);
+R_31_plot_pleatue = zeros(10,12);
+R_32_plot_pleatue = zeros(10,12);
+R_33_plot_pleatue = zeros(10,12);
+R_34_plot_pleatue = zeros(10,12);
+R_41_plot_pleatue = zeros(10,12);
+R_42_plot_pleatue = zeros(10,12);
+R_43_plot_pleatue = zeros(10,12);
+R_44_plot_pleatue = zeros(10,12);
+
+
+
+save('RPlotpleatue.mat','R_11_plot_pleatue','R_12_plot_pleatue','R_13_plot_pleatue','R_14_plot_pleatue','R_21_plot_pleatue','R_22_plot_pleatue','R_23_plot_pleatue','R_24_plot_pleatue','R_31_plot_pleatue','R_32_plot_pleatue','R_33_plot_pleatue','R_34_plot_pleatue','R_41_plot_pleatue','R_42_plot_pleatue','R_43_plot_pleatue','R_44_plot_pleatue');
+
