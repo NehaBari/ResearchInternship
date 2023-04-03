@@ -7,4 +7,5 @@ The goal of this project was to account fot the generalization propoerty of a sh
 Dataset: The dataset used is a randomised dataset generated using randn function
 
 
-To run the code directly run the RELUMain.m file
+To run the code directly run the RELUMain.m file in the code folder
+
